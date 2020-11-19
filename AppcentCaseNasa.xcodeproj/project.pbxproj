@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,11 @@
 		12A27DF02566AB6500ABAB8B /* tabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A27DEF2566AB6500ABAB8B /* tabBar.swift */; };
 		12A27E262566B11700ABAB8B /* UIView-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A27E252566B11700ABAB8B /* UIView-Extensions.swift */; };
 		12A27E2E2566B1F800ABAB8B /* Nasa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12A27E212566ACAC00ABAB8B /* Nasa.ttf */; };
+		12A819CB2566E9AF00B4A378 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A819CA2566E9AF00B4A378 /* Model.swift */; };
+		12A819DA2566EADA00B4A378 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A819D92566EADA00B4A378 /* Network.swift */; };
+		13BE67CF854238C8733C49B0 /* Pods_AppcentCaseNasa_AppcentCaseNasaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666637B5EDC3B09582E04D52 /* Pods_AppcentCaseNasa_AppcentCaseNasaUITests.framework */; };
+		4955BF1B9FD5F2BA4CAF7A62 /* Pods_AppcentCaseNasaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE66F219CA5233FB34E55282 /* Pods_AppcentCaseNasaTests.framework */; };
+		91A4164B27C7F18DE1060F5D /* Pods_AppcentCaseNasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DA18568267206B919E0BB51 /* Pods_AppcentCaseNasa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		084482882FF3CCC41C63E70B /* Pods-AppcentCaseNasa-AppcentCaseNasaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppcentCaseNasa-AppcentCaseNasaUITests.release.xcconfig"; path = "Target Support Files/Pods-AppcentCaseNasa-AppcentCaseNasaUITests/Pods-AppcentCaseNasa-AppcentCaseNasaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		12A27D892566A37000ABAB8B /* AppcentCaseNasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppcentCaseNasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A27D8C2566A37000ABAB8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12A27D8E2566A37000ABAB8B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +65,16 @@
 		12A27DEF2566AB6500ABAB8B /* tabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBar.swift; sourceTree = "<group>"; };
 		12A27E212566ACAC00ABAB8B /* Nasa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nasa.ttf; sourceTree = "<group>"; };
 		12A27E252566B11700ABAB8B /* UIView-Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-Extensions.swift"; sourceTree = "<group>"; };
+		12A819CA2566E9AF00B4A378 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		12A819D92566EADA00B4A378 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		2129281BF2647FD62D03A042 /* Pods-AppcentCaseNasa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppcentCaseNasa.release.xcconfig"; path = "Target Support Files/Pods-AppcentCaseNasa/Pods-AppcentCaseNasa.release.xcconfig"; sourceTree = "<group>"; };
+		5686FC0E0588ED89AB47281E /* Pods-AppcentCaseNasa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppcentCaseNasa.debug.xcconfig"; path = "Target Support Files/Pods-AppcentCaseNasa/Pods-AppcentCaseNasa.debug.xcconfig"; sourceTree = "<group>"; };
+		666637B5EDC3B09582E04D52 /* Pods_AppcentCaseNasa_AppcentCaseNasaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppcentCaseNasa_AppcentCaseNasaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76ED22D3FF86AF1CCD4CE0B2 /* Pods-AppcentCaseNasa-AppcentCaseNasaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppcentCaseNasa-AppcentCaseNasaUITests.debug.xcconfig"; path = "Target Support Files/Pods-AppcentCaseNasa-AppcentCaseNasaUITests/Pods-AppcentCaseNasa-AppcentCaseNasaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9DA18568267206B919E0BB51 /* Pods_AppcentCaseNasa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppcentCaseNasa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE66F219CA5233FB34E55282 /* Pods_AppcentCaseNasaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppcentCaseNasaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E791789B4B769D36C5266065 /* Pods-AppcentCaseNasaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppcentCaseNasaTests.debug.xcconfig"; path = "Target Support Files/Pods-AppcentCaseNasaTests/Pods-AppcentCaseNasaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F2E3895B3FA62A6B15BCAB9F /* Pods-AppcentCaseNasaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppcentCaseNasaTests.release.xcconfig"; path = "Target Support Files/Pods-AppcentCaseNasaTests/Pods-AppcentCaseNasaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91A4164B27C7F18DE1060F5D /* Pods_AppcentCaseNasa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4955BF1B9FD5F2BA4CAF7A62 /* Pods_AppcentCaseNasaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13BE67CF854238C8733C49B0 /* Pods_AppcentCaseNasa_AppcentCaseNasaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +112,8 @@
 				12A27DA22566A37100ABAB8B /* AppcentCaseNasaTests */,
 				12A27DAD2566A37100ABAB8B /* AppcentCaseNasaUITests */,
 				12A27D8A2566A37000ABAB8B /* Products */,
+				A285D8CAADE44A1292978284 /* Pods */,
+				167CA2AF8773BD709AA13C80 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,7 +136,6 @@
 				12A27DC72566A3CF00ABAB8B /* Components */,
 				12A27DCD2566A51500ABAB8B /* Storyboards */,
 				12A27D902566A37000ABAB8B /* ViewController.swift */,
-				12A27DC82566A50600ABAB8B /* Settings.swift */,
 			);
 			path = AppcentCaseNasa;
 			sourceTree = "<group>";
@@ -153,6 +173,9 @@
 				12A27D952566A37100ABAB8B /* Assets.xcassets */,
 				12A27E212566ACAC00ABAB8B /* Nasa.ttf */,
 				12A27D9A2566A37100ABAB8B /* Info.plist */,
+				12A27DC82566A50600ABAB8B /* Settings.swift */,
+				12A819CA2566E9AF00B4A378 /* Model.swift */,
+				12A819D92566EADA00B4A378 /* Network.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -183,6 +206,29 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		167CA2AF8773BD709AA13C80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DA18568267206B919E0BB51 /* Pods_AppcentCaseNasa.framework */,
+				666637B5EDC3B09582E04D52 /* Pods_AppcentCaseNasa_AppcentCaseNasaUITests.framework */,
+				DE66F219CA5233FB34E55282 /* Pods_AppcentCaseNasaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A285D8CAADE44A1292978284 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5686FC0E0588ED89AB47281E /* Pods-AppcentCaseNasa.debug.xcconfig */,
+				2129281BF2647FD62D03A042 /* Pods-AppcentCaseNasa.release.xcconfig */,
+				76ED22D3FF86AF1CCD4CE0B2 /* Pods-AppcentCaseNasa-AppcentCaseNasaUITests.debug.xcconfig */,
+				084482882FF3CCC41C63E70B /* Pods-AppcentCaseNasa-AppcentCaseNasaUITests.release.xcconfig */,
+				E791789B4B769D36C5266065 /* Pods-AppcentCaseNasaTests.debug.xcconfig */,
+				F2E3895B3FA62A6B15BCAB9F /* Pods-AppcentCaseNasaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -190,9 +236,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12A27DB32566A37100ABAB8B /* Build configuration list for PBXNativeTarget "AppcentCaseNasa" */;
 			buildPhases = (
+				D35FCE6CD0386BD41E4B9317 /* [CP] Check Pods Manifest.lock */,
 				12A27D852566A37000ABAB8B /* Sources */,
 				12A27D862566A37000ABAB8B /* Frameworks */,
 				12A27D872566A37000ABAB8B /* Resources */,
+				3DE7D47BB057D36BADAD4420 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,6 +255,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12A27DB62566A37100ABAB8B /* Build configuration list for PBXNativeTarget "AppcentCaseNasaTests" */;
 			buildPhases = (
+				ECF5AE190C74B67B0927F8D6 /* [CP] Check Pods Manifest.lock */,
 				12A27D9B2566A37100ABAB8B /* Sources */,
 				12A27D9C2566A37100ABAB8B /* Frameworks */,
 				12A27D9D2566A37100ABAB8B /* Resources */,
@@ -225,9 +274,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12A27DB92566A37100ABAB8B /* Build configuration list for PBXNativeTarget "AppcentCaseNasaUITests" */;
 			buildPhases = (
+				574E7E310732A78C74D1BE58 /* [CP] Check Pods Manifest.lock */,
 				12A27DA62566A37100ABAB8B /* Sources */,
 				12A27DA72566A37100ABAB8B /* Frameworks */,
 				12A27DA82566A37100ABAB8B /* Resources */,
+				B5AA79E254D9C81F6FB1DE35 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,6 +361,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3DE7D47BB057D36BADAD4420 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppcentCaseNasa/Pods-AppcentCaseNasa-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppcentCaseNasa/Pods-AppcentCaseNasa-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppcentCaseNasa/Pods-AppcentCaseNasa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		574E7E310732A78C74D1BE58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppcentCaseNasa-AppcentCaseNasaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5AA79E254D9C81F6FB1DE35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppcentCaseNasa-AppcentCaseNasaUITests/Pods-AppcentCaseNasa-AppcentCaseNasaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppcentCaseNasa-AppcentCaseNasaUITests/Pods-AppcentCaseNasa-AppcentCaseNasaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppcentCaseNasa-AppcentCaseNasaUITests/Pods-AppcentCaseNasa-AppcentCaseNasaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D35FCE6CD0386BD41E4B9317 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppcentCaseNasa-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECF5AE190C74B67B0927F8D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppcentCaseNasaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		12A27D852566A37000ABAB8B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -317,10 +471,12 @@
 			files = (
 				12A27D912566A37000ABAB8B /* ViewController.swift in Sources */,
 				12A27D8D2566A37000ABAB8B /* AppDelegate.swift in Sources */,
+				12A819DA2566EADA00B4A378 /* Network.swift in Sources */,
 				12A27E262566B11700ABAB8B /* UIView-Extensions.swift in Sources */,
 				12A27DDB2566A77800ABAB8B /* Settings.swift in Sources */,
 				12A27D8F2566A37000ABAB8B /* SceneDelegate.swift in Sources */,
 				12A27DF02566AB6500ABAB8B /* tabBar.swift in Sources */,
+				12A819CB2566E9AF00B4A378 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +649,7 @@
 		};
 		12A27DB42566A37100ABAB8B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5686FC0E0588ED89AB47281E /* Pods-AppcentCaseNasa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -512,6 +669,7 @@
 		};
 		12A27DB52566A37100ABAB8B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2129281BF2647FD62D03A042 /* Pods-AppcentCaseNasa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -531,6 +689,7 @@
 		};
 		12A27DB72566A37100ABAB8B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E791789B4B769D36C5266065 /* Pods-AppcentCaseNasaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -553,6 +712,7 @@
 		};
 		12A27DB82566A37100ABAB8B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2E3895B3FA62A6B15BCAB9F /* Pods-AppcentCaseNasaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -575,6 +735,7 @@
 		};
 		12A27DBA2566A37100ABAB8B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76ED22D3FF86AF1CCD4CE0B2 /* Pods-AppcentCaseNasa-AppcentCaseNasaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -595,6 +756,7 @@
 		};
 		12A27DBB2566A37100ABAB8B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 084482882FF3CCC41C63E70B /* Pods-AppcentCaseNasa-AppcentCaseNasaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

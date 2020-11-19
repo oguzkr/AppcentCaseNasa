@@ -6,12 +6,13 @@
 //
 
 import UIKit
-
+import Alamofire
 class ViewController: UIViewController {
     
-    var page = 1
-    var url = Settings.API_CURIOSITY_URL
+    var currentPage = 1
     var currentTab = 1
+    var network: networkManager = networkManager()
+    var rovers = [Rovers]()
     
     @IBOutlet weak var segmentedView: tabBar!
     
@@ -20,6 +21,8 @@ class ViewController: UIViewController {
         setSegmented()
         clickCuriosity()
     }
+    
+  
     
     func setSegmented(){
         segmentedView.currentTab = currentTab
@@ -32,7 +35,7 @@ class ViewController: UIViewController {
     @objc func clickCuriosity() {
         currentTab = segmentedView.currentTab
         segmentedView.clickSegment1(animated: true)
-        url = Settings.API_CURIOSITY_URL
+        getRoverData()
         UIView.animate(withDuration: 0.2) {
             self.view.layoutSubviews()
         }
@@ -41,19 +44,27 @@ class ViewController: UIViewController {
     @objc func clickOpportunity() {
         currentTab = segmentedView.currentTab
         segmentedView.clickSegment2(animated: true)
-        url = Settings.API_OPPORTUNITY_URL
+        getRoverData()
         UIView.animate(withDuration: 0.2) {
             self.view.layoutSubviews()
         }
+        
     }
     
     @objc func clickSprit() {
         currentTab = segmentedView.currentTab
         segmentedView.clickSegment3(animated: true)
-        url = Settings.API_SPIRIT_URL
+        getRoverData()
         UIView.animate(withDuration: 0.2) {
             self.view.layoutSubviews()
         }
+    }
+    
+    func getRoverData(){
+        network.getRoverData(tab: currentTab, page: currentPage, completed: {
+            self.rovers = self.network.rovers
+            print(self.rovers[0].photos[1].imgSrc)
+        })
     }
 
 
