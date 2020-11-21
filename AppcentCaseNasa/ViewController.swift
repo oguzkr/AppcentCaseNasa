@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 import SDWebImage
 import SwiftGifOrigin
+import SVProgressHUD
 
 class ViewController: UIViewController {
     
@@ -16,7 +17,8 @@ class ViewController: UIViewController {
     var currentTab = 1
     var network: networkManager = networkManager()
     var rovers = [Photos]()
-    
+    var scrollcontrol = true
+
     @IBOutlet weak var segmentedView: tabBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -26,19 +28,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setSegmented()
         clickCuriosity()
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        guard let collectionView = collectionView, let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
-           flowLayout.minimumInteritemSpacing = margin
-           flowLayout.minimumLineSpacing = margin
-           flowLayout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
-        
+        setCollectioView()
         network.getRoverData(tab: 1, page: 1) {
             self.rovers = self.network.rovers
             self.collectionView.reloadData()
         }
     }
     
+    func setCollectioView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        guard let collectionView = collectionView, let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
+           flowLayout.minimumInteritemSpacing = margin
+           flowLayout.minimumLineSpacing = margin
+           flowLayout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
+    }
   
     
     func setSegmented(){
@@ -83,11 +87,21 @@ class ViewController: UIViewController {
             self.collectionView.reloadData()
         })
     }
-
-
+    
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        if offsetY > contentHeight - scrollView.frame.height + 30  && scrollcontrol == true{
+            print("NEXT")
+            scrollcontrol = false
+            //insertnextpage()
+        }
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return rovers.count
@@ -96,17 +110,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier: String = "cell"
         let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath as IndexPath)
-
         cell.layer.cornerRadius = 10
-        
         cell.clipsToBounds = true
         let image : UIImageView = cell.contentView.viewWithTag(1) as! UIImageView
-        
         let url = URL(string: "\(rovers[indexPath.row].imgSrc)")
         image.sd_setImage(with: url, placeholderImage: UIImage.gif(asset: "load.gif"))
-        
         return cell
-
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
