@@ -16,7 +16,6 @@ class networkManager {
 
     func getRoverData(tab:Int, page:Int, completed: @escaping () -> ()){
         SVProgressHUD.show()
-        
         switch tab {
         case 1:
             url = "\(Settings.API_CURIOSITY_URL)\(page)"
@@ -27,7 +26,6 @@ class networkManager {
         default:
             url = "\(Settings.API_CURIOSITY_URL)\(page)"
         }
-        
         AF.request(url).responseData { response in
             switch response.result {
             case .failure(let error):

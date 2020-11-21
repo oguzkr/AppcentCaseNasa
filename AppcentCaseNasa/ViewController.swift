@@ -56,6 +56,7 @@ class ViewController: UIViewController {
     @objc func clickCuriosity() {
         segmentedView.clickSegment1(animated: true)
         currentTab = segmentedView.currentTab
+        currentPage = 1
         getRoverData()
         UIView.animate(withDuration: 0.2) {
             self.view.layoutSubviews()
@@ -65,16 +66,17 @@ class ViewController: UIViewController {
     @objc func clickOpportunity() {
         segmentedView.clickSegment2(animated: true)
         currentTab = segmentedView.currentTab
+        currentPage = 1
         getRoverData()
         UIView.animate(withDuration: 0.2) {
             self.view.layoutSubviews()
         }
-        
     }
     
     @objc func clickSprit() {
         segmentedView.clickSegment3(animated: true)
         currentTab = segmentedView.currentTab
+        currentPage = 1
         getRoverData()
         UIView.animate(withDuration: 0.2) {
             self.view.layoutSubviews()
@@ -88,6 +90,15 @@ class ViewController: UIViewController {
         })
     }
     
+    func insertNextPage(){
+        currentPage += 1
+        network.getRoverData(tab: currentTab, page: currentPage, completed: {
+            self.rovers = self.rovers + self.network.rovers
+            self.collectionView.reloadData()
+            self.scrollcontrol = true
+        })
+    }
+    
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -98,7 +109,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         if offsetY > contentHeight - scrollView.frame.height + 30  && scrollcontrol == true{
             print("NEXT")
             scrollcontrol = false
-            //insertnextpage()
+            insertNextPage()
         }
     }
     
