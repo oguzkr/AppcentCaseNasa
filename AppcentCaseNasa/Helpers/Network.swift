@@ -11,11 +11,12 @@ import SVProgressHUD
 
 class networkManager {
     
-    var rovers = [Rovers]()
+    var rovers = [Photos]()
     var url = Settings.API_CURIOSITY_URL
 
     func getRoverData(tab:Int, page:Int, completed: @escaping () -> ()){
         SVProgressHUD.show()
+        
         switch tab {
         case 1:
             url = "\(Settings.API_CURIOSITY_URL)\(page)"
@@ -34,7 +35,7 @@ class networkManager {
             case .success(let data):
                 do {
                     let roverData = try JSONDecoder().decode(Rovers.self, from: data)
-                    self.rovers = [roverData]
+                    self.rovers = roverData.photos
                     DispatchQueue.main.async {
                         SVProgressHUD.dismiss()
                         completed()

@@ -9,11 +9,11 @@ import Foundation
 
 // MARK: - Rovers
 struct Rovers: Codable {
-    let photos: [Photo]
+    let photos: [Photos]
 }
 
 // MARK: - Photo
-struct Photo: Codable {
+struct Photos: Codable {
     let id, sol: Int
     let camera: Camera
     let imgSrc: String
