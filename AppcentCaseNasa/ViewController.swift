@@ -18,7 +18,20 @@ class ViewController: UIViewController {
     var network: networkManager = networkManager()
     var rovers = [Photos]()
     var scrollcontrol = true
-
+  
+    
+    
+//    Resimlerden birine dokunulduğunda bir pop up açılıp pop up ta üstte resim alt kısımda ise
+//    çekildiği tarih, araç adı, hangi kameradan çekildiği, aracın görev durumu, aracın fırlatma
+//    tarihi ve iniş tarihi bilgileri yer almalıdır.
+    var imgURL = ""
+    var imgDate = ""
+    var imgRoverName = ""
+    var imgCameraName = ""
+    var imgRoverStatus = ""
+    var imgLandingDate = ""
+    var imgLaunchDate = ""
+    
     @IBOutlet weak var segmentedView: tabBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -93,10 +106,31 @@ class ViewController: UIViewController {
     func insertNextPage(){
         currentPage += 1
         network.getRoverData(tab: currentTab, page: currentPage, completed: {
-            self.rovers = self.rovers + self.network.rovers
+            self.rovers += self.network.rovers
             self.collectionView.reloadData()
             self.scrollcontrol = true
         })
+    }
+    
+    func showRoverInfo(roverImgURL:String, roverImgDate:String, roverImgRoverName:String, roverImgCameraName:String,roverImgRoverStatus:String, roverImgLandingDate:String, roverImgLaunchDate:String ){
+        let popCV = self.storyboard?.instantiateViewController(withIdentifier: "RoverInfoViewController") as! RoverInfoViewController
+        popCV.roverImgURL = roverImgURL
+        popCV.roverImgDate = roverImgDate
+        popCV.roverImgRoverName = roverImgRoverName
+        popCV.roverImgCameraName = roverImgCameraName
+        popCV.roverImgRoverStatus = roverImgRoverStatus
+        popCV.roverImgLandingDate = roverImgLandingDate
+        popCV.roverImgLaunchDate = roverImgLaunchDate
+        popCV.view.frame.origin.y = self.view.frame.height
+        popCV.view.backgroundColor = UIColor.clear
+        UIView.animate(withDuration: 0.20, animations: {
+            self.addChild(popCV)
+            popCV.view.frame = self.view.frame
+            self.view.addSubview(popCV.view)
+            popCV.didMove(toParent: self)
+        }) { (nil) in
+            popCV.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        }
     }
     
 }
@@ -111,6 +145,18 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             scrollcontrol = false
             insertNextPage()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        imgURL = rovers[indexPath.row].imgSrc
+        imgDate = rovers[indexPath.row].earthDate
+        imgRoverName = rovers[indexPath.row].rover.name
+        imgCameraName = rovers[indexPath.row].camera.name
+        imgRoverStatus = rovers[indexPath.row].rover.status
+        imgLandingDate = rovers[indexPath.row].rover.landingDate
+        imgLaunchDate = rovers[indexPath.row].rover.launchDate
+        
+        showRoverInfo(roverImgURL: imgURL, roverImgDate: imgDate, roverImgRoverName: imgRoverName, roverImgCameraName: imgCameraName, roverImgRoverStatus: imgRoverStatus, roverImgLandingDate: imgLandingDate, roverImgLaunchDate: imgLaunchDate)
     }
     
     

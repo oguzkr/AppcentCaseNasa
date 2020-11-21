@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		122584092569A23B0023E067 /* RoverInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122584082569A23B0023E067 /* RoverInfoViewController.swift */; };
 		12A27D8D2566A37000ABAB8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A27D8C2566A37000ABAB8B /* AppDelegate.swift */; };
 		12A27D8F2566A37000ABAB8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A27D8E2566A37000ABAB8B /* SceneDelegate.swift */; };
 		12A27D912566A37000ABAB8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A27D902566A37000ABAB8B /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		084482882FF3CCC41C63E70B /* Pods-AppcentCaseNasa-AppcentCaseNasaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppcentCaseNasa-AppcentCaseNasaUITests.release.xcconfig"; path = "Target Support Files/Pods-AppcentCaseNasa-AppcentCaseNasaUITests/Pods-AppcentCaseNasa-AppcentCaseNasaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		122584082569A23B0023E067 /* RoverInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverInfoViewController.swift; sourceTree = "<group>"; };
 		12A27D892566A37000ABAB8B /* AppcentCaseNasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppcentCaseNasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A27D8C2566A37000ABAB8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12A27D8E2566A37000ABAB8B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				12A27DC72566A3CF00ABAB8B /* Components */,
 				12A27DCD2566A51500ABAB8B /* Storyboards */,
 				12A27D902566A37000ABAB8B /* ViewController.swift */,
+				122584082569A23B0023E067 /* RoverInfoViewController.swift */,
 			);
 			path = AppcentCaseNasa;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				12A27D8F2566A37000ABAB8B /* SceneDelegate.swift in Sources */,
 				12A27DF02566AB6500ABAB8B /* tabBar.swift in Sources */,
 				12A819CB2566E9AF00B4A378 /* Model.swift in Sources */,
+				122584092569A23B0023E067 /* RoverInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
