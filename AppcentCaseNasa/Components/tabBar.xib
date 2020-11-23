@@ -29,7 +29,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="segmentedLineWhite" translatesAutoresizingMaskIntoConstraints="NO" id="R6e-mW-ojo">
-                            <rect key="frame" x="0.0" y="35" width="115" height="5"/>
+                            <rect key="frame" x="0.0" y="35" width="110" height="5"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </imageView>
@@ -90,6 +90,6 @@
         </view>
     </objects>
     <resources>
-        <image name="segmentedLineWhite" width="471" height="15"/>
+        <image name="segmentedLineWhite" width="235.5" height="7.5"/>
     </resources>
 </document>

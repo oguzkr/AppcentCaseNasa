@@ -1,16 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "segmentedLineWhite.png",
+      "filename" : "bt_filter.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "segmentedLineWhite-1.png",
+      "filename" : "bt_filter-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "bt_filter-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

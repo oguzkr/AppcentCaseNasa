@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,21 +18,13 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AppcentCaseNasa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="AppcentCaseNasa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ri-IZ-dLh" customClass="tabBar" customModule="AppcentCaseNasa" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="mvy-BE-pDz"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4dJ-yA-I1p">
-                                <rect key="frame" x="0.0" y="45" width="375" height="622"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="I9b-Q6-j54">
                                     <size key="itemSize" width="202" height="199"/>
@@ -61,17 +54,84 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="rlU-DO-5lb"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjO-fN-C45">
+                                <rect key="frame" x="0.0" y="10" width="375" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rover photos from NASA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HQ-6M-nfI">
+                                        <rect key="frame" x="20" y="12" width="300" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="5yg-Oh-rDX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Nasa" family="Nasa" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2S-Bx-3Lt">
+                                        <rect key="frame" x="320" y="12.5" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="FKz-vc-VmM"/>
+                                            <constraint firstAttribute="height" constant="40" id="jLT-RB-Nve"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="bt_filter"/>
+                                        <connections>
+                                            <action selector="clickShowFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wy8-3O-vPI"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tu7-S2-XVn">
+                                        <rect key="frame" x="0.0" y="64" width="375" height="1"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="ESP-kx-c4A"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oguz Karatoruk - Case" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hx-Ss-OSS">
+                                        <rect key="frame" x="20" y="39" width="300" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="FAd-fT-sl4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Y2S-Bx-3Lt" firstAttribute="leading" secondItem="7hx-Ss-OSS" secondAttribute="trailing" id="3v4-GE-Ifw"/>
+                                    <constraint firstItem="Tu7-S2-XVn" firstAttribute="leading" secondItem="gjO-fN-C45" secondAttribute="leading" id="8he-Sh-iI5"/>
+                                    <constraint firstItem="7hx-Ss-OSS" firstAttribute="leading" secondItem="gjO-fN-C45" secondAttribute="leading" constant="20" id="BmP-el-cFc"/>
+                                    <constraint firstItem="5HQ-6M-nfI" firstAttribute="top" secondItem="gjO-fN-C45" secondAttribute="top" constant="12" id="FGO-Tv-qB9"/>
+                                    <constraint firstItem="Y2S-Bx-3Lt" firstAttribute="centerY" secondItem="gjO-fN-C45" secondAttribute="centerY" id="MMm-YK-9SH"/>
+                                    <constraint firstAttribute="height" constant="65" id="Suq-jR-XAJ"/>
+                                    <constraint firstItem="7hx-Ss-OSS" firstAttribute="top" secondItem="5HQ-6M-nfI" secondAttribute="bottom" constant="7" id="VNw-7c-ekx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tu7-S2-XVn" secondAttribute="trailing" id="ZIZ-MS-eQ4"/>
+                                    <constraint firstItem="5HQ-6M-nfI" firstAttribute="leading" secondItem="gjO-fN-C45" secondAttribute="leading" constant="20" id="aSV-M9-bjx"/>
+                                    <constraint firstItem="Y2S-Bx-3Lt" firstAttribute="leading" secondItem="5HQ-6M-nfI" secondAttribute="trailing" id="t3Q-yt-hcc"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tu7-S2-XVn" secondAttribute="bottom" id="tUg-6D-PJZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y2S-Bx-3Lt" secondAttribute="trailing" constant="15" id="zz6-dg-Qac"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ri-IZ-dLh" customClass="tabBar" customModule="AppcentCaseNasa" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="75" width="375" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="f9E-zJ-4qO"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="nasaLightColor"/>
                         <constraints>
-                            <constraint firstItem="4dJ-yA-I1p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2Q0-Gu-XSM"/>
-                            <constraint firstItem="3Ri-IZ-dLh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2wG-2w-kvX"/>
-                            <constraint firstItem="4dJ-yA-I1p" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="AAZ-MZ-NnR"/>
-                            <constraint firstItem="4dJ-yA-I1p" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DEd-G2-rZc"/>
-                            <constraint firstItem="3Ri-IZ-dLh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="USf-x4-CzF"/>
-                            <constraint firstItem="3Ri-IZ-dLh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bzG-O0-qYU"/>
-                            <constraint firstItem="4dJ-yA-I1p" firstAttribute="top" secondItem="3Ri-IZ-dLh" secondAttribute="bottom" constant="5" id="t7s-Vr-q5E"/>
+                            <constraint firstItem="3Ri-IZ-dLh" firstAttribute="top" secondItem="gjO-fN-C45" secondAttribute="bottom" id="EbU-GJ-KvM"/>
+                            <constraint firstItem="gjO-fN-C45" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nfe-jP-ePI"/>
+                            <constraint firstItem="4dJ-yA-I1p" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="P6x-2h-6Gr"/>
+                            <constraint firstItem="4dJ-yA-I1p" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="YYq-Oh-HVB"/>
+                            <constraint firstItem="gjO-fN-C45" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aiw-wM-p3y"/>
+                            <constraint firstItem="3Ri-IZ-dLh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gkB-P6-3n5"/>
+                            <constraint firstItem="3Ri-IZ-dLh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hdw-cF-cgj"/>
+                            <constraint firstItem="4dJ-yA-I1p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nob-Lc-jVZ"/>
+                            <constraint firstItem="4dJ-yA-I1p" firstAttribute="top" secondItem="3Ri-IZ-dLh" secondAttribute="bottom" constant="5" id="pFm-2Q-qvI"/>
+                            <constraint firstItem="gjO-fN-C45" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="10" id="vrk-L4-prK"/>
                         </constraints>
                     </view>
                     <connections>
@@ -231,15 +291,115 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YIv-7f-pdV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="704.79999999999995" y="78.710644677661179"/>
+            <point key="canvasLocation" x="706" y="79"/>
+        </scene>
+        <!--Filter Options View Controller-->
+        <scene sceneID="jbZ-Xq-qsE">
+            <objects>
+                <viewController storyboardIdentifier="FilterOptionsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qrM-AQ-ijB" customClass="FilterOptionsViewController" customModule="AppcentCaseNasa" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E1z-br-VjH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpU-EE-BRi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="closeFilterOptions:" destination="qrM-AQ-ijB" eventType="touchUpInside" id="QPn-Cc-hhM"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vx6-3u-hHT">
+                                <rect key="frame" x="37.5" y="158.5" width="300" height="350"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="epo-4p-omk">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="350"/>
+                                        <color key="backgroundColor" name="nasaColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="F9j-Sf-2aL"/>
+                                            <constraint firstAttribute="height" constant="350" id="qQy-pz-1z1"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="optionsCell" rowHeight="70" id="tZW-Od-hwI" customClass="optionTitleTableViewCell" customModule="AppcentCaseNasa" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="300" height="70"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tZW-Od-hwI" id="66H-sG-9Ro">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rover" translatesAutoresizingMaskIntoConstraints="NO" id="VPo-kV-iEV">
+                                                            <rect key="frame" x="21" y="20" width="30" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="6bH-IM-g1K"/>
+                                                                <constraint firstAttribute="width" constant="30" id="cRF-Om-DUi"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yr-W8-hvt">
+                                                            <rect key="frame" x="71" y="26" width="193" height="18"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="18" id="wtB-Rb-lOb"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Nasa" family="Nasa" pointSize="25"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="nasaColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="2Yr-W8-hvt" secondAttribute="trailing" constant="20" id="4zF-ai-zbO"/>
+                                                        <constraint firstItem="2Yr-W8-hvt" firstAttribute="centerY" secondItem="66H-sG-9Ro" secondAttribute="centerY" id="MVJ-Ym-KnY"/>
+                                                        <constraint firstItem="2Yr-W8-hvt" firstAttribute="leading" secondItem="VPo-kV-iEV" secondAttribute="trailing" constant="20" id="aHR-sU-Drc"/>
+                                                        <constraint firstItem="VPo-kV-iEV" firstAttribute="centerY" secondItem="66H-sG-9Ro" secondAttribute="centerY" id="mJS-Hz-Br9"/>
+                                                        <constraint firstItem="VPo-kV-iEV" firstAttribute="leading" secondItem="66H-sG-9Ro" secondAttribute="leadingMargin" constant="5" id="zGV-8Q-nCh"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" name="nasaColor"/>
+                                                <connections>
+                                                    <outlet property="optionTitle" destination="2Yr-W8-hvt" id="lVB-96-tCw"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="qrM-AQ-ijB" id="xe1-7G-bJx"/>
+                                            <outlet property="delegate" destination="qrM-AQ-ijB" id="ZaU-vU-Pi0"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="epo-4p-omk" firstAttribute="centerX" secondItem="vx6-3u-hHT" secondAttribute="centerX" id="Rkw-2E-LlA"/>
+                                    <constraint firstItem="epo-4p-omk" firstAttribute="centerY" secondItem="vx6-3u-hHT" secondAttribute="centerY" id="eoz-rh-Q49"/>
+                                    <constraint firstAttribute="width" constant="300" id="pOU-ep-zug"/>
+                                    <constraint firstAttribute="height" constant="350" id="v2W-N4-c9a"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PsD-Cv-mXd"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vx6-3u-hHT" firstAttribute="centerX" secondItem="E1z-br-VjH" secondAttribute="centerX" id="Itc-J4-Y0F"/>
+                            <constraint firstItem="vx6-3u-hHT" firstAttribute="centerY" secondItem="E1z-br-VjH" secondAttribute="centerY" id="lRL-w1-VmJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="epo-4p-omk" id="f82-6J-ffU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZZ-aD-amU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1383.2" y="88.605697151424295"/>
         </scene>
     </scenes>
     <resources>
+        <image name="bt_filter" width="256" height="256"/>
+        <image name="rover" width="256" height="256"/>
         <namedColor name="nasaColor">
             <color red="0.043000001460313797" green="0.23899999260902405" blue="0.5690000057220459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="nasaLightColor">
             <color red="0.043000001460313797" green="0.23899999260902405" blue="0.5690000057220459" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

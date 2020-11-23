@@ -18,24 +18,21 @@ class ViewController: UIViewController {
     var network: networkManager = networkManager()
     var rovers = [Photos]()
     var scrollcontrol = true
-  
+    var cameraFilterOptions = Array<String>()
+    let margin: CGFloat = 10
     
-    
-//    Resimlerden birine dokunulduğunda bir pop up açılıp pop up ta üstte resim alt kısımda ise
-//    çekildiği tarih, araç adı, hangi kameradan çekildiği, aracın görev durumu, aracın fırlatma
-//    tarihi ve iniş tarihi bilgileri yer almalıdır.
-    var imgURL = ""
-    var imgDate = ""
-    var imgRoverName = ""
-    var imgCameraName = ""
-    var imgRoverStatus = ""
-    var imgLandingDate = ""
-    var imgLaunchDate = ""
+    //VARIABLES FOR POPUP SCREEN
+    var imgURL = String()
+    var imgDate = String()
+    var imgRoverName = String()
+    var imgCameraName = String()
+    var imgRoverStatus = String()
+    var imgLandingDate = String()
+    var imgLaunchDate = String()
     
     @IBOutlet weak var segmentedView: tabBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let margin: CGFloat = 10
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,27 +42,16 @@ class ViewController: UIViewController {
         network.getRoverData(tab: 1, page: 1) {
             self.rovers = self.network.rovers
             self.collectionView.reloadData()
+            self.getCameraFilterOptions()
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(self.filterData(notification:)), name: NSNotification.Name(rawValue: "filter"), object: nil)
     }
     
-    func setCollectioView() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        guard let collectionView = collectionView, let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
-           flowLayout.minimumInteritemSpacing = margin
-           flowLayout.minimumLineSpacing = margin
-           flowLayout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
-    }
-  
-    
-    func setSegmented(){
-        segmentedView.currentTab = currentTab
-        segmentedView.buttonSegmented1.addTarget(self, action: #selector(clickCuriosity), for: .touchUpInside)
-        segmentedView.buttonSegmented2.addTarget(self, action: #selector(clickOpportunity), for: .touchUpInside)
-        segmentedView.buttonSegmented3.addTarget(self, action: #selector(clickSprit), for: .touchUpInside)
-        segmentedView.layoutSubviews()
+    @IBAction func clickShowFilter(_ sender: Any) {
+        showFilterOptions(options: self.cameraFilterOptions)
     }
     
+    //MARK: TABBAR BUTTONS
     @objc func clickCuriosity() {
         segmentedView.clickSegment1(animated: true)
         currentTab = segmentedView.currentTab
@@ -96,11 +82,100 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK:FILTER FUNCTIONS
+    func getCameraFilterOptions(){
+        if currentPage == 1 {
+            cameraFilterOptions.removeAll()
+            cameraFilterOptions.append("ALL")
+        }
+        for rover in self.network.rovers {
+            if cameraFilterOptions.contains(rover.camera.name) {
+                //don't append
+            } else {
+                cameraFilterOptions.append(rover.camera.name)
+            }
+        }
+        print("FILTER OPTIONS: \(cameraFilterOptions)")
+    }
+    
+    func getFilteredRoverData(camera:String){
+        self.rovers.removeAll()
+        if currentPage == 1 {
+            network.getRoverData(tab: currentTab, page: currentPage) {
+                for rover in self.network.rovers {
+                    print(rover)
+                    if rover.camera.name.contains(camera) {
+                        self.rovers.append(rover)
+                    }
+                }
+                self.collectionView.reloadData()
+            }
+        } else {
+            for page in 1...currentPage {
+                print("Page \(page)")
+                network.getRoverData(tab: currentTab, page: page) {
+                    for rover in self.network.rovers {
+                        print(rover)
+                        if rover.camera.name.contains(camera) {
+                            self.rovers.append(rover)
+                        }
+                    }
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+        getCameraFilterOptions()
+    }
+    
+    @objc func filterData(notification: NSNotification) {
+        if let selectedFilter = notification.userInfo?["selectedFilter"] as? String {
+            if selectedFilter == "ALL" {
+                getRoverData()
+            } else {
+                getFilteredRoverData(camera: selectedFilter)
+            }
+            print(selectedFilter)
+        }
+     }
+    
+    //MARK: collectionView and tabBar customizations
+    func setCollectioView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        guard let collectionView = collectionView, let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
+           flowLayout.minimumInteritemSpacing = margin
+           flowLayout.minimumLineSpacing = margin
+           flowLayout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
+    }
+    
+    func setSegmented(){
+        segmentedView.currentTab = currentTab
+        segmentedView.buttonSegmented1.addTarget(self, action: #selector(clickCuriosity), for: .touchUpInside)
+        segmentedView.buttonSegmented2.addTarget(self, action: #selector(clickOpportunity), for: .touchUpInside)
+        segmentedView.buttonSegmented3.addTarget(self, action: #selector(clickSprit), for: .touchUpInside)
+        segmentedView.layoutSubviews()
+    }
+    
+    //MARK: GET & INSERT DATA
     func getRoverData(){
-        network.getRoverData(tab: currentTab, page: currentPage, completed: {
-            self.rovers = self.network.rovers
-            self.collectionView.reloadData()
-        })
+        if currentPage == 1 {
+            network.getRoverData(tab: currentTab, page: currentPage, completed: {
+                self.rovers = self.network.rovers
+                self.collectionView.reloadData()
+                self.getCameraFilterOptions()
+                self.collectionView.setContentOffset(.zero, animated: false)
+            })
+        } else {
+            self.rovers.removeAll()
+            for page in 1...currentPage {
+                network.getRoverData(tab: currentTab, page: page, completed: {
+                    self.rovers += self.network.rovers
+                    self.collectionView.reloadData()
+                    self.getCameraFilterOptions()
+                    self.collectionView.setContentOffset(.zero, animated: false)
+                })
+            }
+        }
     }
     
     func insertNextPage(){
@@ -108,8 +183,26 @@ class ViewController: UIViewController {
         network.getRoverData(tab: currentTab, page: currentPage, completed: {
             self.rovers += self.network.rovers
             self.collectionView.reloadData()
+            self.getCameraFilterOptions()
             self.scrollcontrol = true
         })
+    }
+    
+    
+    //MARK: SHOW POPUP VIEWS
+    func showFilterOptions(options: Array<String>){
+        let popCV = self.storyboard?.instantiateViewController(withIdentifier: "FilterOptionsViewController") as! FilterOptionsViewController
+        popCV.cameraFilterOptions = options
+        popCV.view.frame.origin.y = self.view.frame.height
+        popCV.view.backgroundColor = UIColor.clear
+        UIView.animate(withDuration: 0.20, animations: {
+            self.addChild(popCV)
+            popCV.view.frame = self.view.frame
+            self.view.addSubview(popCV.view)
+            popCV.didMove(toParent: self)
+        }) { (nil) in
+            popCV.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        }
     }
     
     func showRoverInfo(roverImgURL:String, roverImgDate:String, roverImgRoverName:String, roverImgCameraName:String,roverImgRoverStatus:String, roverImgLandingDate:String, roverImgLaunchDate:String ){
@@ -135,15 +228,18 @@ class ViewController: UIViewController {
     
 }
 
+
+//MARK: EXTENSIONS
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         if offsetY > contentHeight - scrollView.frame.height + 30  && scrollcontrol == true{
-            print("NEXT")
-            scrollcontrol = false
-            insertNextPage()
+            if self.rovers.count >= 25 {
+                scrollcontrol = false
+                insertNextPage()
+            }
         }
     }
     
@@ -181,7 +277,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let totalSpace = flowLayout.sectionInset.left
             + flowLayout.sectionInset.right
             + (flowLayout.minimumInteritemSpacing * CGFloat(noOfCellsInRow - 1))
-
         let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(noOfCellsInRow))
         return CGSize(width: size, height: 200)
     }

@@ -13,7 +13,6 @@ class tabBar: UIView {
     @IBOutlet weak var buttonSegmented1: UIButton!
     @IBOutlet weak var buttonSegmented2: UIButton!
     @IBOutlet weak var buttonSegmented3: UIButton!
-    
     @IBOutlet weak var imageSegmentedLine: UIImageView!
     
     var currentTab = Int()

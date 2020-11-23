@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1222CDDB256BC7EA00CE4C90 /* FilterOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CDDA256BC7EA00CE4C90 /* FilterOptionsViewController.swift */; };
 		122584092569A23B0023E067 /* RoverInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122584082569A23B0023E067 /* RoverInfoViewController.swift */; };
+		1265CF7E256BCFC600202D9A /* optionTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1265CF7D256BCFC600202D9A /* optionTitleTableViewCell.swift */; };
 		12A27D8D2566A37000ABAB8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A27D8C2566A37000ABAB8B /* AppDelegate.swift */; };
 		12A27D8F2566A37000ABAB8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A27D8E2566A37000ABAB8B /* SceneDelegate.swift */; };
 		12A27D912566A37000ABAB8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A27D902566A37000ABAB8B /* ViewController.swift */; };
@@ -47,7 +49,9 @@
 
 /* Begin PBXFileReference section */
 		084482882FF3CCC41C63E70B /* Pods-AppcentCaseNasa-AppcentCaseNasaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppcentCaseNasa-AppcentCaseNasaUITests.release.xcconfig"; path = "Target Support Files/Pods-AppcentCaseNasa-AppcentCaseNasaUITests/Pods-AppcentCaseNasa-AppcentCaseNasaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1222CDDA256BC7EA00CE4C90 /* FilterOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptionsViewController.swift; sourceTree = "<group>"; };
 		122584082569A23B0023E067 /* RoverInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverInfoViewController.swift; sourceTree = "<group>"; };
+		1265CF7D256BCFC600202D9A /* optionTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = optionTitleTableViewCell.swift; sourceTree = "<group>"; };
 		12A27D892566A37000ABAB8B /* AppcentCaseNasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppcentCaseNasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A27D8C2566A37000ABAB8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12A27D8E2566A37000ABAB8B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1222CDE2256BC95800CE4C90 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				12A27D902566A37000ABAB8B /* ViewController.swift */,
+				122584082569A23B0023E067 /* RoverInfoViewController.swift */,
+				1222CDDA256BC7EA00CE4C90 /* FilterOptionsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		12A27D802566A37000ABAB8B = {
 			isa = PBXGroup;
 			children = (
@@ -137,8 +151,7 @@
 				12A27DBF2566A37F00ABAB8B /* Delegates */,
 				12A27DC72566A3CF00ABAB8B /* Components */,
 				12A27DCD2566A51500ABAB8B /* Storyboards */,
-				12A27D902566A37000ABAB8B /* ViewController.swift */,
-				122584082569A23B0023E067 /* RoverInfoViewController.swift */,
+				1222CDE2256BC95800CE4C90 /* ViewControllers */,
 			);
 			path = AppcentCaseNasa;
 			sourceTree = "<group>";
@@ -188,6 +201,7 @@
 			children = (
 				12A27DEA2566AB4D00ABAB8B /* tabBar.xib */,
 				12A27DEF2566AB6500ABAB8B /* tabBar.swift */,
+				1265CF7D256BCFC600202D9A /* optionTitleTableViewCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -473,7 +487,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				12A27D912566A37000ABAB8B /* ViewController.swift in Sources */,
+				1222CDDB256BC7EA00CE4C90 /* FilterOptionsViewController.swift in Sources */,
 				12A27D8D2566A37000ABAB8B /* AppDelegate.swift in Sources */,
+				1265CF7E256BCFC600202D9A /* optionTitleTableViewCell.swift in Sources */,
 				12A819DA2566EADA00B4A378 /* Network.swift in Sources */,
 				12A27E262566B11700ABAB8B /* UIView-Extensions.swift in Sources */,
 				12A27DDB2566A77800ABAB8B /* Settings.swift in Sources */,
