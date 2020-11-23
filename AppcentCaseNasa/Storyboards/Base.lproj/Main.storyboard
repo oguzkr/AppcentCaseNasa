@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4dJ-yA-I1p">
-                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="135" width="375" height="532"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="I9b-Q6-j54">
                                     <size key="itemSize" width="202" height="199"/>
@@ -55,7 +55,7 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjO-fN-C45">
-                                <rect key="frame" x="0.0" y="10" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="25" width="375" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rover photos from NASA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HQ-6M-nfI">
                                         <rect key="frame" x="20" y="12" width="300" height="20"/>
@@ -111,7 +111,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ri-IZ-dLh" customClass="tabBar" customModule="AppcentCaseNasa" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="75" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -131,7 +131,7 @@
                             <constraint firstItem="3Ri-IZ-dLh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hdw-cF-cgj"/>
                             <constraint firstItem="4dJ-yA-I1p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nob-Lc-jVZ"/>
                             <constraint firstItem="4dJ-yA-I1p" firstAttribute="top" secondItem="3Ri-IZ-dLh" secondAttribute="bottom" constant="5" id="pFm-2Q-qvI"/>
-                            <constraint firstItem="gjO-fN-C45" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="10" id="vrk-L4-prK"/>
+                            <constraint firstItem="gjO-fN-C45" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="25" id="vrk-L4-prK"/>
                         </constraints>
                     </view>
                     <connections>
